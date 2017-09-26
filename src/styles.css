@@ -9,9 +9,9 @@ label {
   font-weight: bold;
 }
 
-@media(min-width:1200px) {
+@media (min-width: 1200px) {
   .container {
-    max-width: 1170px;
+    width: 1170px;
     margin: 0 auto;
   }
 }
