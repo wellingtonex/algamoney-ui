@@ -31,11 +31,7 @@
         <p-column field="descricao" header="Descrição"></p-column>
         <p-column field="dataVencimento" header="Vencimento" styleClass="col-data"></p-column>
         <p-column field="dataPagamento" header="Pagamento" styleClass="col-data"></p-column>
-        <p-column field="valor" header="Valor" styleClass="col-valor">
-          <ng-template let-lanc="rowData" pTemplate="body">
-            <span>{{lanc.valor}}</span>
-          </ng-template>
-        </p-column>
+        <p-column field="valor" header="Valor" styleClass="col-valor"></p-column>
 
       </p-dataTable>
 
