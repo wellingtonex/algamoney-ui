@@ -7,11 +7,13 @@
 
     <div class="ui-g-12 ui-fluid">
       <label>Nome</label>
-      <input pInputText type="text" appCampoColorido [cor]="'yellow'">
+      <input pInputText type="text" appCampoColorido [cor]="'yellow'" #campo="campoColorido">
     </div>
 
     <div class="ui-g-12">
       <button pButton type="submit" label="Pesquisar"></button>
+      <button pButton  (click)="campo.colorir()" label="Colorir"></button>
+      <button pButton  (click)="campo.descolorir()" label="Descolorir"></button>
     </div>
 
   </div>
@@ -41,7 +43,7 @@
     </div>
 
     <div class="ui-g-12">
-      <a pButton label="Novo Lançamento"></a>
+      <a pButton label="Adicionar"></a>
     </div>
 
   </div>
