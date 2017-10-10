@@ -33,12 +33,14 @@
 
       <div class="ui-g-12 ui-md-6 ui-fluid">
           <label>Categoria</label>
-          <input pInputText type="text">
+          <p-dropdown [options]="categorias" placeholder="Selecione"
+          [autoWidth]="false" #categoria></p-dropdown>
       </div>
 
       <div class="ui-g-12 ui-md-6 ui-fluid">
           <label>Pessoa</label>
-          <input pInputText type="text">
+          <p-dropdown [options]="pessoas" placeholder="Selecione"
+          [autoWidth]="false" [filter]="true" #pessoa></p-dropdown>
       </div>
 
       <div class="ui-g-12 ui-fluid">
