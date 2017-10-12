@@ -1,5 +1,5 @@
 <div class="container">
-  <form>
+  <form #f="ngForm" autocomplete="off">
     <div class="ui-g">
       <div class="ui-g-12">
         <h1>Novo Lançamento</h1>
@@ -11,8 +11,10 @@
 
       <div class="ui-g-6 ui-md-3 ui-fluid">
         <label>Vencimento</label>
-        <p-calendar dateFormat="dd/mm/yy" [locale]="pt_BR" [readonlyInput]="true"
-        [showIcon]="true"></p-calendar>
+        <p-calendar ngModel name="vencimento" #vendimento="ngModel" dateFormat="dd/mm/yy" [locale]="pt_BR" [readonlyInput]="true"
+        [showIcon]="true" [required]="tipo.value == 'RECEITA' ? true : false"></p-calendar>
+
+
       </div>
 
       <div class="ui-g-6 ui-md-3 ui-fluid">
@@ -37,19 +39,19 @@
       <div class="ui-g-12 ui-md-3 ui-fluid">
           <label>Valor</label>
           <input pInputText name="valor" type="text" placeholder="0.0" currencyMask [options]="{ prefix: '', thousands: '.', decimal: ',', allowNegative:false }"
-            ngModel>
+            ngModel #valor="ngModel" required>
       </div>
 
       <div class="ui-g-12 ui-md-6 ui-fluid">
           <label>Categoria</label>
           <p-dropdown [options]="categorias" placeholder="Selecione"
-          [autoWidth]="false" #categoria></p-dropdown>
+          [autoWidth]="false" #categoria required></p-dropdown>
       </div>
 
       <div class="ui-g-12 ui-md-6 ui-fluid">
           <label>Pessoa</label>
           <p-dropdown [options]="pessoas" placeholder="Selecione"
-          [autoWidth]="false" [filter]="true" #pessoa></p-dropdown>
+          [autoWidth]="false" [filter]="true" #pessoa required></p-dropdown>
       </div>
 
       <div class="ui-g-12 ui-fluid">
@@ -58,7 +60,7 @@
       </div>
 
       <div class="ui-g-12">
-          <button pButton type="submit" label="Salvar"></button>
+          <button pButton type="submit" label="Salvar" [disabled]="f.invalid"></button>
           <button pButton type="button" label="Novo" class="ui-button-info"></button>
           <a href="javascript:;">Voltar para a pesquisa</a>
       </div>
