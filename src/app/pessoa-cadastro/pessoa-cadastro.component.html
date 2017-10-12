@@ -1,5 +1,5 @@
 <div class="container">
-  <form autocomplete="off">
+  <form #f="ngForm" autocomplete="off">
 
     <div class="ui-g">
       <div class="ui-g-12">
@@ -8,17 +8,26 @@
 
       <div class="ui-g-12 ui-fluid">
         <label>Nome</label>
-        <input pInputText type="text">
+        <input pInputText ngModel name="nome" #nome="ngModel" type="text" required>
+
+        <app-message [control]="nome" error="required" text="Informe um nome">
+        </app-message>
       </div>
 
       <div class="ui-g-12 ui-md-9 ui-fluid">
         <label>Logradouro</label>
-        <input pInputText type="text">
+        <input pInputText ngModel name="logradouro" #logradouro="ngModel" type="text" required>
+
+        <app-message [control]="logradouro" error="required" text="Informe um logradouro">
+        </app-message>
       </div>
 
       <div class="ui-g-12 ui-md-3 ui-fluid">
         <label>Número</label>
-        <input pInputText type="text">
+        <input pInputText ngModel name="numero" #numero="ngModel" type="text" required>
+
+        <app-message [control]="numero" error="required" text="Informe um numero">
+        </app-message>
       </div>
 
       <div class="ui-g-12 ui-md-4 ui-fluid">
@@ -28,26 +37,31 @@
 
       <div class="ui-g-12 ui-md-4 ui-fluid">
         <label>Bairro</label>
-        <input pInputText type="text">
+        <input pInputText ngModel name="bairro" #bairro="ngModel" type="text" required>
+
+        <app-message [control]="bairro" error="required" text="Informe um bairro"></app-message>
       </div>
 
       <div class="ui-g-12 ui-md-4 ui-fluid">
         <label>CEP</label>
-        <p-inputMask mask="99.999-999"></p-inputMask>
+        <p-inputMask ngModel name="cep" #cep="ngModel" mask="99.999-999" required></p-inputMask>
+        <app-message [control]="cep" error="required" text="Informe um cep"></app-message>
       </div>
 
       <div class="ui-g-12 ui-md-6 ui-fluid">
         <label>Cidade</label>
-        <input pInputText type="text">
+        <input pInputText ngModel name="cidade" #cidade="ngModel" type="text" required>
+        <app-message [control]="cidade" error="required" text="Informe uma cidade"></app-message>
       </div>
 
       <div class="ui-g-12 ui-md-6 ui-fluid">
         <label>Estado</label>
-        <input pInputText type="text">
+        <input ngModel name="estado" #estado="ngModel" pInputText type="text" required>
+        <app-message [control]="estado" error="required" text="Informe um estado"></app-message>
       </div>
 
       <div class="ui-g-12">
-        <button pButton type="submit" label="Salvar"></button>
+        <button pButton type="submit" label="Salvar" [disabled]="f.invalid"></button>
         <button pButton type="button" label="Novo" class="ui-button-info"></button>
 
         <a href="javascript:;">Voltar para a pesquisa</a>
