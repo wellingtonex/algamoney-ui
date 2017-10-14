@@ -15,6 +15,7 @@ import { InputTextModule } from 'primeng/components/inputtext/inputtext';
 import { LancamentosGridComponent } from './lancamentos-grid/lancamentos-grid.component';
 import { LancamentosPesquisaComponent } from './lancamentos-pesquisa/lancamentos-pesquisa.component';
 import { LancamentoCadastroComponent } from './lancamento-cadastro/lancamento-cadastro.component';
+import { SheredModule } from './../shered/shered.module';
 
 @NgModule({
   imports: [
@@ -28,7 +29,8 @@ import { LancamentoCadastroComponent } from './lancamento-cadastro/lancamento-ca
     CalendarModule,
     SelectButtonModule,
     DropdownModule,
-    CurrencyMaskModule
+    CurrencyMaskModule,
+    SheredModule
   ],
   declarations: [
     LancamentoCadastroComponent,

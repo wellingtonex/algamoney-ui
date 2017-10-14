@@ -1,4 +1,3 @@
-
 import { FormsModule } from '@angular/forms';
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
@@ -13,6 +12,7 @@ import { CampoColoridoDirective } from './pessoas-pesquisa/campo-colorido.direct
 import { PessoasPesquisaComponent } from './pessoas-pesquisa/pessoas-pesquisa.component';
 import { PessoasGridComponent } from './pessoas-grid/pessoas-grid.component';
 import { PessoaCadastroComponent } from './pessoa-cadastro/pessoa-cadastro.component';
+import { SheredModule } from './../shered/shered.module';
 
 
 @NgModule({
@@ -24,7 +24,8 @@ import { PessoaCadastroComponent } from './pessoa-cadastro/pessoa-cadastro.compo
     ButtonModule,
     DataTableModule,
     TooltipModule,
-    InputMaskModule
+    InputMaskModule,
+    SheredModule
   ],
   declarations: [
     PessoaCadastroComponent,
