@@ -12,7 +12,6 @@ import { DataTableModule } from 'primeng/components/datatable/datatable';
 import { ButtonModule } from 'primeng/components/button/button';
 import { InputTextModule } from 'primeng/components/inputtext/inputtext';
 
-import { LancamentosGridComponent } from './lancamentos-grid/lancamentos-grid.component';
 import { LancamentosPesquisaComponent } from './lancamentos-pesquisa/lancamentos-pesquisa.component';
 import { LancamentoCadastroComponent } from './lancamento-cadastro/lancamento-cadastro.component';
 import { SheredModule } from './../shered/shered.module';
@@ -34,8 +33,7 @@ import { SheredModule } from './../shered/shered.module';
   ],
   declarations: [
     LancamentoCadastroComponent,
-    LancamentosPesquisaComponent,
-    LancamentosGridComponent
+    LancamentosPesquisaComponent
   ],
   exports: [
     LancamentoCadastroComponent,

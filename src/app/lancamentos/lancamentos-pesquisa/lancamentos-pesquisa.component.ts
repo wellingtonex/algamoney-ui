@@ -20,7 +20,7 @@ export class LancamentosPesquisaComponent implements OnInit {
   }
 
   pesquisar() {
-    const filtro : LancamentoFiltro  = {
+    const filtro: LancamentoFiltro  = {
       descricao: this.descricao,
       dataVencimentoInicio: this.dataVencimentoInicio,
       dataVencimentoFim: this.dataVencimentoFim
