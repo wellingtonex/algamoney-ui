@@ -12,6 +12,8 @@ import { LancamentosModule } from './lancamentos/lancamentos.module';
 
 import { LancamentoService } from './lancamentos/lancamento.service';
 
+import {ToastyModule} from 'ng2-toasty';
+
 @NgModule({
   declarations: [
     AppComponent
@@ -22,7 +24,8 @@ import { LancamentoService } from './lancamentos/lancamento.service';
     HttpModule,
     LancamentosModule,
     PessoasModule,
-    CoreModule
+    CoreModule,
+    ToastyModule.forRoot()
   ],
   providers: [LancamentoService],
   bootstrap: [AppComponent]
