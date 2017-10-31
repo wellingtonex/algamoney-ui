@@ -1,7 +1,7 @@
 import { FormsModule } from '@angular/forms';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { BrowserModule } from '@angular/platform-browser';
-import { NgModule } from '@angular/core';
+import { NgModule, LOCALE_ID } from '@angular/core';
 import { HttpModule } from '@angular/http';
 
 import { AppComponent } from './app.component';
@@ -30,7 +30,11 @@ import { ConfirmationService } from 'primeng/components/common/api';
     ToastyModule.forRoot(),
     ConfirmDialogModule
   ],
-  providers: [LancamentoService, ConfirmationService],
+  providers: [
+    LancamentoService,
+    ConfirmationService,
+    { provide: LOCALE_ID, useValue: 'pt-BR' }
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
