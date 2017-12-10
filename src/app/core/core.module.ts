@@ -1,5 +1,6 @@
 import { ConfirmationService } from 'primeng/components/common/api';
 import { LancamentoService } from './../lancamentos/lancamento.service';
+import { PessoaService } from './../pessoas/pessoa.service';
 import { ConfirmDialogModule } from 'primeng/components/confirmdialog/confirmdialog';
 import { ToastyModule } from 'ng2-toasty';
 import { ErrorHandlerService } from './error-handler.service';
@@ -23,6 +24,7 @@ import { CommonModule } from '@angular/common';
   providers: [
     ErrorHandlerService,
     LancamentoService,
+    PessoaService,
     ConfirmationService,
     { provide: LOCALE_ID, useValue: 'pt-BR' }
   ]
