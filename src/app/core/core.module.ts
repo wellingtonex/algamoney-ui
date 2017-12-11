@@ -1,3 +1,4 @@
+import { CategoriaService } from './../categorias/categoria.service';
 import { ConfirmationService } from 'primeng/components/common/api';
 import { LancamentoService } from './../lancamentos/lancamento.service';
 import { PessoaService } from './../pessoas/pessoa.service';
@@ -26,6 +27,8 @@ import { CommonModule } from '@angular/common';
     LancamentoService,
     PessoaService,
     ConfirmationService,
+    CategoriaService,
+    CategoriaService,
     { provide: LOCALE_ID, useValue: 'pt-BR' }
   ]
 })

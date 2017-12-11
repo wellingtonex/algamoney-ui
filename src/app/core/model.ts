@@ -16,6 +16,7 @@ export class Pessoa {
 }
 
 export class Categoria {
+  nome: string;
   codigo: number;
 }
 
