@@ -49,9 +49,9 @@ export class PessoaService {
     const headers = new Headers();
     headers.append('Authorization', 'Basic YWRtaW5AYWxnYW1vbmV5LmNvbTphZG1pbg==');
 
-    return this.http.get(this.pessoasUrl, { headers })
+    return this.http.get(`${this.pessoasUrl}/all`, { headers })
       .toPromise()
-      .then(response => response.json().content);
+      .then(response => response.json());
   }
 
   adicionar(pessoa: Pessoa): Promise<Pessoa> {
