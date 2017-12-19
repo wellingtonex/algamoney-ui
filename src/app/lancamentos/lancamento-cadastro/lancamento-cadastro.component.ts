@@ -36,7 +36,8 @@ export class LancamentoCadastroComponent implements OnInit {
 
   ngOnInit() {
 
-      console.log(this.route.snapshot.params['codigo']);
+      const codigoLancamento = this.route.snapshot.params['codigo'];
+      this.carregarLancamento(codigoLancamento);
 
       this.pt_BR = {
         firstDayOfWeek: 0,
@@ -63,6 +64,15 @@ export class LancamentoCadastroComponent implements OnInit {
     });
   }
 
+  carregarLancamento(codigoLancamento) {
+    if (codigoLancamento) {
+      this.lancamentoService.buscarPorCodigo(codigoLancamento)
+        .then(resposta => {
+          this.lancamento = resposta;
+        }).catch( error => this.errorHandler.handle(error));
+    }
+  }
+
   carregarPessoas() {
     this.pessoaService.listarTodas()
       .then(pessoas => {
@@ -80,6 +90,10 @@ export class LancamentoCadastroComponent implements OnInit {
         form.reset();
         this.lancamento = new Lancamento();
       }).catch(error => this.errorHandler.handle(error));
+  }
+
+  get editando() {
+    return Boolean(this.lancamento.codigo);
   }
 
 }
