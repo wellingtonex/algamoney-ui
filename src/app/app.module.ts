@@ -18,6 +18,7 @@ import { CategoriasModule } from './categorias/categorias.module';
 const rotas: Routes = [
   {path: 'lancamentos', component: LancamentosPesquisaComponent},
   {path: 'lancamentos/novo', component: LancamentoCadastroComponent},
+  {path: 'lancamentos/:codigo', component: LancamentoCadastroComponent},
   {path: 'pessoas', component: PessoasPesquisaComponent}
 ];
 
