@@ -6,7 +6,7 @@ import { Component, OnInit } from '@angular/core';
 import { PessoaService } from './../../pessoas/pessoa.service';
 import { ErrorHandlerService } from './../../core/error-handler.service';
 import { CategoriaService } from './../../categorias/categoria.service';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 
 @Component({
   selector: 'app-lancamento-cadastro',
@@ -31,7 +31,8 @@ export class LancamentoCadastroComponent implements OnInit {
     private pessoaService: PessoaService,
     private lancamentoService: LancamentoService,
     private toasty: ToastyService,
-    private route: ActivatedRoute
+    private route: ActivatedRoute,
+    private router: Router
   ) { }
 
   ngOnInit() {
@@ -103,9 +104,21 @@ export class LancamentoCadastroComponent implements OnInit {
     this.lancamentoService.adicionar(this.lancamento)
       .then(lancamento => {
         this.toasty.success('Lançamento adicionado com sucesso.');
-        form.reset();
+        //limpa o formulario
+        //form.reset();
+        this.router.navigate(['/lancamentos']);
         this.lancamento = new Lancamento();
       }).catch(error => this.errorHandler.handle(error));
+  }
+
+  novo(form: FormControl) {
+    form.reset();
+
+    //gambiarra para garantir que o reset seja executado antes
+    setTimeout(()  => {
+      this.lancamento = new Lancamento();
+    }, 1);
+    this.router.navigate(['/lancamentos/novo']);
   }
 
   get editando() {
