@@ -33,9 +33,6 @@ import { SheredModule } from './../shered/shered.module';
     PessoasGridComponent,
     CampoColoridoDirective
   ],
-  exports: [
-    PessoaCadastroComponent,
-    PessoasPesquisaComponent
-  ]
+  exports: []
 })
 export class PessoasModule { }
