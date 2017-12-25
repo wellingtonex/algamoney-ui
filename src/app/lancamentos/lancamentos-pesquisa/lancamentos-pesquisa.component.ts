@@ -5,6 +5,7 @@ import { ErrorHandlerService } from './../../core/error-handler.service';
 import { LancamentoService, LancamentoFiltro } from './../lancamento.service';
 
 import { ToastyService } from 'ng2-toasty';
+import { Title } from '@angular/platform-browser';
 
 @Component({
   selector: 'app-lancamentos-pesquisa',
@@ -22,9 +23,12 @@ export class LancamentosPesquisaComponent implements OnInit {
       private lancamentoService: LancamentoService,
       private toasty: ToastyService,
       private confirmation: ConfirmationService,
-      private errorHandler: ErrorHandlerService) { }
+      private errorHandler: ErrorHandlerService,
+      private title: Title) { }
 
-  ngOnInit() {}
+  ngOnInit() {
+    this.title.setTitle('Pesquisa de Lançamentos');
+  }
 
   pesquisar(pagina = 0) {
     this.filtro.pagina = pagina;

@@ -1,3 +1,4 @@
+import { Title } from '@angular/platform-browser';
 import { RouterModule } from '@angular/router';
 import { CategoriaService } from './../categorias/categoria.service';
 import { ConfirmationService } from 'primeng/components/common/api';
@@ -32,7 +33,8 @@ import { PaginaNaoEncontradaComponent } from './pagina-nao-encontrada.component'
     ConfirmationService,
     CategoriaService,
     CategoriaService,
-    { provide: LOCALE_ID, useValue: 'pt-BR' }
+    { provide: LOCALE_ID, useValue: 'pt-BR' },
+    Title
   ]
 })
 export class CoreModule { }
