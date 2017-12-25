@@ -1,3 +1,4 @@
+import { LancamentosRoutingModule } from './lancamentos-routing.module';
 import { RouterModule } from '@angular/router';
 import { FormsModule } from '@angular/forms';
 import { NgModule } from '@angular/core';
@@ -31,7 +32,7 @@ import { SheredModule } from './../shered/shered.module';
     DropdownModule,
     CurrencyMaskModule,
     SheredModule,
-    RouterModule
+    LancamentosRoutingModule
   ],
   declarations: [
     LancamentoCadastroComponent,
