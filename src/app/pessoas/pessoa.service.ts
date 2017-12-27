@@ -1,4 +1,4 @@
-import { Pessoa } from './../core/model';
+import { Pessoa, Lancamento } from './../core/model';
 import { Http, Headers, URLSearchParams } from '@angular/http';
 import { Injectable } from '@angular/core';
 
@@ -81,6 +81,32 @@ export class PessoaService {
     return this.http.put(`${this.pessoasUrl}/${codigo}/ativo`, ativo, { headers })
       .toPromise()
       .then(() => null);
+  }
+
+  buscarPorCodigo(codigo: number): Promise<Pessoa> {
+    const headers = new Headers();
+    headers.append('Authorization', 'Basic YWRtaW5AYWxnYW1vbmV5LmNvbTphZG1pbg==');
+    headers.append('Content-Type', 'application/json');
+
+    return this.http.get(`${this.pessoasUrl}/${codigo}`, {headers})
+      .toPromise()
+      .then(response => {
+        const pessoa = response.json() as Pessoa;
+        return pessoa;
+      });
+  }
+
+  atualizar(pessoa: Pessoa): Promise<Pessoa> {
+    const headers = new Headers();
+    headers.append('Authorization', 'Basic YWRtaW5AYWxnYW1vbmV5LmNvbTphZG1pbg==');
+    headers.append('Content-Type', 'application/json');
+
+    return this.http.put(`${this.pessoasUrl}/${pessoa.codigo}`, pessoa, {headers})
+      .toPromise()
+      .then(response => {
+        const pessoaAlterada = response.json() as Pessoa;
+        return pessoaAlterada;
+      });
   }
 
 }

@@ -9,7 +9,6 @@ import { Routes, RouterModule } from '@angular/router';
 
 const rotas: Routes = [
   {path: '', redirectTo: 'lancamentos', pathMatch: 'full'},
-  {path: 'pessoas', component: PessoasPesquisaComponent},
   {path: 'pagina-nao-encontrada', component: PaginaNaoEncontradaComponent},
   {path: '**', redirectTo: 'pagina-nao-encontrada'}
 ];
