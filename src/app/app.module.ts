@@ -1,3 +1,4 @@
+import { SegurancaModule } from './seguranca/seguranca.module';
 import { AppRoutingModule } from './app-routing.module';
 import { PaginaNaoEncontradaComponent } from './core/pagina-nao-encontrada.component';
 import { PessoasPesquisaComponent } from './pessoas/pessoas-pesquisa/pessoas-pesquisa.component';
@@ -28,6 +29,7 @@ import { CategoriasModule } from './categorias/categorias.module';
     PessoasModule,
     CategoriasModule,
     CoreModule,
+    SegurancaModule,
     AppRoutingModule
   ],
   providers: [],
