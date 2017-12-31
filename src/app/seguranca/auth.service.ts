@@ -32,6 +32,13 @@ export class AuthService {
       })
       .catch(response => {
         console.log(response);
+        if (response.status === 400) {
+          const reponseJson = response.json();
+          if (reponseJson.error === 'invalid_grant') {
+            return Promise.reject('Usuário ou senha inválido!');
+          }
+        }
+        return Promise.reject(response);
       });
   }
 
