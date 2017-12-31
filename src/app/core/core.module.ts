@@ -12,6 +12,7 @@ import { NavbarComponent } from './navbar/navbar.component';
 import { NgModule, LOCALE_ID } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { PaginaNaoEncontradaComponent } from './pagina-nao-encontrada.component';
+import { JwtHelper } from 'angular2-jwt';
 
 
 @NgModule({
@@ -36,7 +37,8 @@ import { PaginaNaoEncontradaComponent } from './pagina-nao-encontrada.component'
     CategoriaService,
     AuthService,
     { provide: LOCALE_ID, useValue: 'pt-BR' },
-    Title
+    Title,
+    JwtHelper
   ]
 })
 export class CoreModule { }
