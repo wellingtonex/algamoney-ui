@@ -1,5 +1,6 @@
+import { AuthHttp } from 'angular2-jwt';
 import { Categoria } from './../core/model';
-import { Http, Headers, URLSearchParams } from '@angular/http';
+import { URLSearchParams } from '@angular/http';
 import { Injectable } from '@angular/core';
 
 @Injectable()
@@ -7,31 +8,22 @@ export class CategoriaService {
 
   categoriaUrl = 'http://localhost:8080/categorias';
 
-  constructor(private http: Http) { }
+  constructor(private http: AuthHttp) { }
 
   listar(): Promise<any> {
-    const headers = new Headers();
-    headers.append('Authorization', 'Basic YWRtaW5AYWxnYW1vbmV5LmNvbTphZG1pbg==');
-    return this.http.get(this.categoriaUrl, {headers})
+    return this.http.get(this.categoriaUrl)
       .toPromise()
       .then(response => response.json());
   }
 
   excluir(codigo: number): Promise<void> {
-    const headers = new Headers();
-    headers.append('Authorization', 'Basic YWRtaW5AYWxnYW1vbmV5LmNvbTphZG1pbg==');
-
-    return this.http.delete(`${this.categoriaUrl}/${codigo}`, { headers })
+    return this.http.delete(`${this.categoriaUrl}/${codigo}`)
       .toPromise()
       .then(() => null);
   }
 
   adicionar(categoria: Categoria): Promise<Categoria> {
-    const headers = new Headers();
-    headers.append('Authorization', 'Basic YWRtaW5AYWxnYW1vbmV5LmNvbTphZG1pbg==');
-    headers.append('Content-Type', 'application/json');
-
-    return this.http.post(this.categoriaUrl, JSON.stringify(categoria), { headers })
+    return this.http.post(this.categoriaUrl, JSON.stringify(categoria))
       .toPromise()
       .then(response => response.json());
   }
