@@ -55,4 +55,16 @@ export class AuthService {
     }
   }
 
+  private temPermissao(permissao: string) {
+      return this.jwtPayload && this.jwtPayload.authorities.includes(permissao);
+  }
+
+  temPermissaoConsultarPessoas() {
+    return this.temPermissao('ROLE_PESQUISAR_PESSOA');
+  }
+
+  temPermissaoConsultarLancamentos() {
+    return this.temPermissao('ROLE_PESQUISAR_LANCAMENTO');
+  }
+
 }
