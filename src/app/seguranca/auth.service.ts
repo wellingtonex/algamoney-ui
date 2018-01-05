@@ -24,7 +24,7 @@ export class AuthService {
 
     const body = `username=${usuario}&password=${senha}&grant_type=password`;
 
-    return this.http.post(this.oauthTokenUrl, body, { headers })
+    return this.http.post(this.oauthTokenUrl, body, { headers, withCredentials: true })
       .toPromise()
       .then(response => {
         this.armazenarToken(response.json().access_token);
@@ -67,4 +67,23 @@ export class AuthService {
     return this.temPermissao('ROLE_PESQUISAR_LANCAMENTO');
   }
 
+  obterNovoAccessToken(): Promise<void> {
+
+    const headers = new Headers();
+    headers.append('Content-Type', 'application/x-www-form-urlencoded');
+    headers.append('Authorization', 'Basic YW5ndWxhcjpAbmd1bEByMA==');
+
+    const body = 'grant_type=refresh_token';
+
+    return this.http.post(this.oauthTokenUrl, body, { headers, withCredentials: true })
+    .toPromise()
+    .then(response => {
+      console.log('Token renovado com sucesso.');
+      this.armazenarToken(response.json().access_token);
+      return Promise.resolve(null);
+    }).catch(error => {
+      console.error('Erro ao renovar token', error);
+      return Promise.resolve(null);
+    });
+  }
 }
