@@ -28,7 +28,6 @@ export class CategoriasPesquisaComponent implements OnInit {
     this.categoriaService.listar()
       .then(resultado => {
         this.categorias = resultado;
-        console.log(this.categorias);
       })
       .catch(erro => this.errorHandler.handle(erro));
   }

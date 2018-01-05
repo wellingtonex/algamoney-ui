@@ -107,7 +107,6 @@ export class LancamentoCadastroComponent implements OnInit {
     }
 
   adicionar(form: FormControl) {
-    console.log(this.lancamento);
     this.lancamentoService.adicionar(this.lancamento)
       .then(lancamento => {
         this.toasty.success('Lançamento adicionado com sucesso.');
