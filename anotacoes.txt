@@ -1,0 +1,7 @@
+ng g c message --spec=false --inline-template --inline-style
+
+
+ng g c core/nao-autorizado.component --spec=false --inline-template --inline-style
+
+--gerando um route guard
+ ng g g seguranca/auth --spec=false
