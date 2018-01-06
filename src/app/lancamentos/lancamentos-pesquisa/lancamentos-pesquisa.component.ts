@@ -1,3 +1,4 @@
+import { AuthService } from './../../seguranca/auth.service';
 import { Component, OnInit, ViewChild } from '@angular/core';
 import { LazyLoadEvent, ConfirmationService } from 'primeng/components/common/api';
 
@@ -24,7 +25,8 @@ export class LancamentosPesquisaComponent implements OnInit {
       private toasty: ToastyService,
       private confirmation: ConfirmationService,
       private errorHandler: ErrorHandlerService,
-      private title: Title) { }
+      private title: Title,
+      private auth: AuthService) { }
 
   ngOnInit() {
     this.title.setTitle('Pesquisa de Lançamentos');

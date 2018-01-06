@@ -67,6 +67,10 @@ export class AuthService {
     return this.temPermissao('ROLE_PESQUISAR_LANCAMENTO');
   }
 
+  temPermissaoExcluirLancamentos() {
+    return this.temPermissao('ROLE_REMOVER_LANCAMENTO');
+  }
+
   obterNovoAccessToken(): Promise<void> {
 
     const headers = new Headers();

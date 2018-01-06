@@ -55,7 +55,8 @@
               <a pButton icon="fa-pencil" pTooltip="Editar" tooltipPosition="top"
                 [routerLink]="['/lancamentos', lancamento.codigo]"></a>
               <button pButton icon="fa-trash" pTooltip="Excluir" tooltipPosition="top"
-                (click)="confirmarExclusao(lancamento)"></button>
+                (click)="confirmarExclusao(lancamento)"
+                [disabled]="!auth.temPermissaoExcluirLancamentos()"></button>
             </ng-template>
           </p-column>
         </p-dataTable>
