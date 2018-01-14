@@ -5,3 +5,11 @@ ng g c core/nao-autorizado.component --spec=false --inline-template --inline-sty
 
 --gerando um route guard
  ng g g seguranca/auth --spec=false
+
+
+--build produção
+ ng build --environment=prod
+
+--meta flag, otimiza a compilação, adiciona outras flags,parametros ao build
+--adiciona tambem a compilação aot
+ ng build --prod
