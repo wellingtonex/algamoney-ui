@@ -13,3 +13,6 @@ ng g c core/nao-autorizado.component --spec=false --inline-template --inline-sty
 --meta flag, otimiza a compilação, adiciona outras flags,parametros ao build
 --adiciona tambem a compilação aot
  ng build --prod
+
+
+https://wb-algamoney-ui.herokuapp.com/
